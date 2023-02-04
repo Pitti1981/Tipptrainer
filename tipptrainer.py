@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import ttk
 import tkinter as tk
 import random
+import gc
 
 wordbook = open('Wortliste_deutsch.txt', 'r')
 
@@ -137,5 +138,5 @@ for child in mainFrame.winfo_children():
     child.grid_configure(padx=10, pady=10)
 
 mainWin.bind('<Key>', check)
-
+gc.collect()
 mainWin.mainloop()
